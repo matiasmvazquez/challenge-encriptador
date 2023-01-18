@@ -1,19 +1,59 @@
 body{
-    display: flex;
+    /* display: flex; */
     background: #E5E5E5;
     font-family: 'Inter';
+}
+
+header{
+    height: 5vh;
 }
 
 .logo{
     padding: 40px 84px;
 }
 
+main{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    /* justify-content:space-around; */
+    /* background-color: aqua; */
+    
+}
+
+.section1{
+    width: 75%;
+    height: 70vh;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-content:space-between; */
+    margin: 10% 3% 0 5%;
+}
+
+.form{
+    /* display: flex;
+    flex-direction: column;
+    /* align-content: space-between; 
+    justify-content: space-between; */
+    
+}
+
+.textarea{
+    /* display: block;
+    margin: auto; */
+    /* background-color: aqua; */
+}
+
 #textarea{
-    position: absolute;
-    width: 577px;
-    height: 50vh;
-    left: 240px;
-    top: 168px;
+    /* position: absolute; */
+    /* display: block;
+    margin: auto; */
+    width: 100%;
+    height: 40vh;
+    /* left: 240px;
+    top: 168px; */
     resize: none;
 
     font-family: 'Inter';
@@ -29,23 +69,90 @@ textarea::placeholder {
     color: #0A3871;
 }
 
+.bloqueInferior{
+    /* position: absolute; */
+    /* margin-left: 5%; */
+    /* bottom: 25%; */
+    font-size: 16px;
+    /* display: flex; */
+    justify-content:left;
+    /* background-color: brown; */
+}
+
+.bloqueInferior p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #495057;
+    /* background-color: aqua; */
+}
+
+.botones{
+    /* position: absolute; */
+    /* margin-left: 240px;
+    bottom: 10%; */
+    display: flex;
+    justify-content:left;
+    
+    padding: 24px 0;
+    gap: 8px;
+    /* background-color: darkgreen; */
+    
+    border-radius: 24px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.botones input{
+    width: 328px;
+    height: 67px; 
+    border-radius: 24px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.encriptar{
+    background: #0A3871;
+    color: #FFFFFF;
+    border: none;
+}
+
+.desencriptar{
+    background: #D8DFE8;
+    color: #0A3871;
+    border-color: #0A3871;
+}
+
 aside{
     display: flex;
-    float: right;
-    max-width: 20vw;
-    max-height: 90vh;
-    height: 1000px;
-    margin: 40px 5% 0 auto;
+    /* float: right; */
+    /* height: 90%; */
+    width: 35%;
+    /* max-width: 35%; */
+
+    /* max-width: 20vw;
+    max-height: 85vh; */
+    margin: 1% 40px ;
     
         
     background: #FFFFFF;
+    /* background-color: coral; */
         
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
 
-    text-align: center;
-    vertical-align:middle;
-    padding: 2%;
+    /* text-align: center;
+    vertical-align:middle; */
+    padding: 1%;
+}
+
+.contenidoAside{
+    background: #FFFFFF;
+    margin: auto;
+}
+
+.contenidoAside img{
+    width: 90%;
 }
 
 .contenidoAside h2{
@@ -70,52 +177,25 @@ aside{
     color: #495057;
 }
 
-.contenidoAside{
-    background: #FFFFFF;
-    margin: auto;
+.contenidaAsideResuelto{
+    width: 100%;
+    text-align: center;
+    /* visibility: hidden; */
 }
 
-.bloqueInferior{
-    position: absolute;
-    margin-left: 264px;
-    bottom: 25%;
-    font-size: 16px;
+footer{
+    height: 5vh;
+    background-color: crimson;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box; 
 }
 
-.bloqueInferior p{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #495057;
+.ocultar{
+    display:none;
+/*  visibility: hidden; */
 }
 
-.botones{
-    position: absolute;
-    margin-left: 240px;
-    bottom: 10%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
-}
-
-.botones input{
-    width: 328px;
-    height: 67px; 
-    border-radius: 24px;
-    font-weight: 400;
-    font-size: 16px;
-}
-
-.encriptar{
-    background: #0A3871;
-    color: #FFFFFF;
-    border: none;
-}
-
-.desencriptar{
-    background: #D8DFE8;
-    color: #0A3871;
-    border-color: #0A3871;
+.mostrar{
+    display: contents;
 }
