@@ -9,43 +9,79 @@ botonDesencriptar.onclick = desencriptar;
 botonCopiar.onclick = copiar;
 
 
-function recupererTextoArea() {
+function recuperarTextoArea() {
     var textoEncriptar = document.querySelector("textarea");
     return textoEncriptar.value;
 }
 
-function encriptar(){  
-    ocultarAside();
-    //alert("encriptar pulsado");
-    //alert(recupererTextoArea());
+function isLowerCase (input) {  
+    return input === String(input).toLowerCase()
+}
+
+function validar(){
     
-    var caracteres = recupererTextoArea().split("");
-    for (let index = 0; index < caracteres.length; index++) {
-        const element = caracteres[index];
-        if (element == "e") {
-            caracteres[index] = "enter";
-        }
-        if (element == "i") {
-            caracteres[index] = "imes";
-        }
-        if (element == "a") {
-            caracteres[index] = "ai";
-        }
-        if (element == "o") {
-            caracteres[index] = "ober";
-        }
-        if (element == "u") {
-            caracteres[index] = "ufat";
-        }
+    const acentos = ['á','é','í','ó','ú'] // /\S*[\u00E0-\u00FC]\S*/;
+
+    if(isLowerCase(recuperarTextoArea()) == false){
+        alert("Por favor solo letras minúsculas y sin acentos");
+        ocultarTextoEncriptado();
+        return false;
+    }
+    else if ((recuperarTextoArea()).includes('á') || (recuperarTextoArea()).includes('é') || (recuperarTextoArea()).includes('í') || (recuperarTextoArea()).includes('ó') || (recuperarTextoArea()).includes('ú') == true) {
+        alert("Por favor solo letras minúsculas y sin acentos");
+        ocultarTextoEncriptado();
+        return false;
+        
+    }
+    else{
+        return true;
     }
     
-    document.getElementById("parrafoEncriptado").innerHTML = caracteres.join("");
+}
+
+function encriptar(){  
+    
+/*     if(isLowerCase(recuperarTextoArea()) == false){
+        alert("Por favor solo letras minúsculas y sin acentos");
+        ocultarTextoEncriptado();
+        return;
+    }  */
+    if(validar() == true){
+        ocultarAside();
+        
+        //alert("encriptar pulsado");
+        //alert(recupererTextoArea());
+        
+        var caracteres = recuperarTextoArea().split("");
+        for (let index = 0; index < caracteres.length; index++) {
+            const element = caracteres[index];
+            if (element == "e") {
+                caracteres[index] = "enter";
+            }
+            else if (element == "i") {
+                caracteres[index] = "imes";
+            }
+            else if (element == "a") {
+                caracteres[index] = "ai";
+            }
+            else if (element == "o") {
+                caracteres[index] = "ober";
+            }
+            else if (element == "u") {
+                caracteres[index] = "ufat";
+            }
+        }
+        
+        document.getElementById("parrafoEncriptado").innerHTML = caracteres.join("");
+        } else {
+            return;
+    }
 }
 
 function desencriptar(){
     ocultarAside();
 
-    var caracteres = recupererTextoArea().split("");
+    var caracteres = recuperarTextoArea().split("");
     var caracteresFinal = "";
     for (let index = 0; index < caracteres.length; index++) {
         const element = caracteres[index];
@@ -84,12 +120,12 @@ function ocultarAside(){
     resuelto.classList.remove("ocultar");
 }
 
-/* function ocultarTextoEncriptado(){
+function ocultarTextoEncriptado(){
     const list = document.getElementById("contenidoAside");
     list.classList.remove("ocultar");
     const remove = document.getElementById("contenidoAsideResuelto");
     remove.classList.add("ocultar");
-} */
+}
 
 function copiar(){
     var copyText = document.getElementById("parrafoEncriptado").innerHTML;
