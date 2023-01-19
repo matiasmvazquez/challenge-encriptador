@@ -1,10 +1,12 @@
 var botonEncriptar = document.querySelector(".encriptar");
 var botonDesencriptar = document.querySelector(".desencriptar");
+var botonCopiar = document.querySelector(".btn-copiar");
 var aside = document.querySelector("aside");
 
 
 botonEncriptar.onclick = encriptar;
 botonDesencriptar.onclick = desencriptar;
+botonCopiar.onclick = copiar;
 
 
 function recupererTextoArea() {
@@ -89,3 +91,8 @@ function ocultarAside(){
     remove.classList.add("ocultar");
 } */
 
+function copiar(){
+    var copyText = document.getElementById("parrafoEncriptado").innerHTML;
+    navigator.clipboard.writeText(copyText);
+    //alert("copiado" + copyText);
+}
