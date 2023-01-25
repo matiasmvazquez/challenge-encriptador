@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="estilos.css">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> -->
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <title>Encriptador de Texto</title>
@@ -19,18 +16,18 @@
     </header>
     <main>
         <section class="section1">
-            <!-- <form action="" class="form"> -->
-                <div class="textarea">
-                    <textarea autofocus name="texto" id="textarea" placeholder="Ingrese el texto aqui"></textarea>
+
+            <div class="textarea">
+                <textarea autofocus name="texto" id="textarea" placeholder="Ingrese el texto aqui"></textarea>
+            </div>
+            <div class="bloqueInferior">
+                <p>❗Solo letras minúsculas y sin acentos</p>
+                <div class="botones">
+                    <input type="button" value="Encriptar" class="encriptar">
+                    <input type="button" value="Desencriptar" class="desencriptar">
                 </div>
-                <div class="bloqueInferior">
-                    <p>❗Solo letras minúsculas y sin acentos</p>
-                    <div class="botones">
-                        <input type="button" value="Encriptar" class="encriptar">
-                        <input type="button" value="Desencriptar" class="desencriptar">
-                    </div>
-                </div>
-            <!-- </form> -->
+            </div>
+
         </section>
 
         <aside>
@@ -44,16 +41,17 @@
                 <div class="resultadoEncriptado">
                     <h3 id="tituloEncriptado">Mensaje Encriptado</h3>
                     <p id="parrafoEncriptado">texto encriptado</p>
+                    <div class="contenedorCopiar">
+                        <input type="button" value="Copiar" class="btn-copiar">
+                    </div>
                 </div>
-                <div class="contenedorCopiar">
-                    <input type="button" value="Copiar" class="btn-copiar">
-                </div>
+                
             </div>
         </aside>
     </main>
     <footer>
         <p>
-            © Derechos reservados Matias Vazquez
+            © Desarrollado por Matias Vazquez
         </p>
     </footer>
     
